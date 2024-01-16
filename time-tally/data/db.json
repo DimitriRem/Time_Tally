@@ -1,0 +1,231 @@
+{
+  "rates": [
+    {
+      "id": "1",
+      "rate": "10",
+      "label": "Dev: Std"
+    },
+    {
+      "id": "2",
+      "rate": "20",
+      "label": "Dev: AfterHrs"
+    },
+    {
+      "id": "3",
+      "rate": "30",
+      "label": "FilmShoot"
+    },
+    {
+      "label": "Designing",
+      "rate": "15",
+      "id": "4"
+    },
+    {
+      "rate": "5",
+      "label": "Discount Dev",
+      "id": "5"
+    },
+    {
+      "id": "201f",
+      "rate": "15",
+      "label": "Rate for Deleting"
+    },
+    {
+      "id": "40ed",
+      "rate": "23",
+      "label": "testing on new"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "name": "Make Inc"
+    },
+    {
+      "id": "2",
+      "name": "JayVay"
+    },
+    {
+      "id": "3",
+      "name": "Acmecorp"
+    },
+    {
+      "name": "Greg Cooper",
+      "id": "4"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Make Inc Website",
+      "client": "Make Inc"
+    },
+    {
+      "id": "2",
+      "name": "JayVay widget",
+      "client": "JayVay"
+    },
+    {
+      "id": "3",
+      "name": "Acmecorp App",
+      "client": "Acmecorp"
+    },
+    {
+      "id": "4",
+      "name": "Acmecorp Video",
+      "client": "Acmecorp"
+    },
+    {
+      "id": "5",
+      "name": "Acmecorp Email",
+      "client": "Acmecorp"
+    },
+    {
+      "id": "6",
+      "name": "GC Flyer",
+      "client": "Greg Cooper"
+    },
+    {
+      "id": "be86",
+      "name": "getridof",
+      "client": "Make Inc"
+    }
+  ],
+  "log": [
+    {
+      "id": "4",
+      "project": "Acmecorp Email",
+      "details": "Compiled email as per design",
+      "client": "Acmecorp",
+      "rate": "20",
+      "startTime": "2022-09-20T14:30:00.000Z",
+      "endTime": "2022-09-20T16:00:00.000Z"
+    },
+    {
+      "id": "6",
+      "project": "JayVay widget",
+      "details": "widget design",
+      "client": "JayVay",
+      "rate": "20",
+      "startTime": "2022-09-20T17:30:00.000Z",
+      "endTime": "2022-09-20T18:00:00.000Z"
+    },
+    {
+      "id": "7",
+      "project": "Acmecorp Email",
+      "details": "email design",
+      "client": "Acmecorp",
+      "rate": "10",
+      "startTime": "2022-09-15T15:30:00.000Z",
+      "endTime": "2022-09-15T17:30:00.000Z"
+    },
+    {
+      "project": "JayVay widget",
+      "details": "Editing CSS on Jayvay widget",
+      "client": "JayVay",
+      "rate": "10",
+      "startTime": "2022-09-15T07:00:00.000Z",
+      "endTime": "2022-09-15T11:00:00.000Z",
+      "id": "31"
+    },
+    {
+      "project": "JayVay widget",
+      "details": "Editing CSS on Jayvay widget",
+      "client": "JayVay",
+      "rate": "10",
+      "startTime": "2022-09-16T07:00:00.000Z",
+      "endTime": "2022-09-16T11:00:00.000Z",
+      "id": "32"
+    },
+    {
+      "project": "Acmecorp Email",
+      "details": "Edited copy",
+      "client": "Acmecorp",
+      "rate": "10",
+      "startTime": "2022-09-16T12:00:00.000Z",
+      "endTime": "2022-09-16T15:00:00.000Z",
+      "id": "33"
+    },
+    {
+      "project": "Make Inc Website",
+      "details": "wireframe development",
+      "client": "Make Inc",
+      "rate": "10",
+      "startTime": "2023-10-10T07:30:00.000Z",
+      "endTime": "2023-10-10T15:30:00.000Z",
+      "id": "34"
+    },
+    {
+      "project": "Acmecorp Video",
+      "details": "Filmshoot on set",
+      "client": "Acmecorp",
+      "rate": "30",
+      "startTime": "2023-10-17T07:00:00.000Z",
+      "endTime": "2023-10-17T13:30:00.000Z",
+      "id": "35"
+    },
+    {
+      "project": "Acmecorp App",
+      "details": "App MVP",
+      "client": "Acmecorp",
+      "rate": "10",
+      "startTime": "2023-11-02T07:00:00.000Z",
+      "endTime": "2023-11-02T15:30:00.000Z",
+      "id": "36"
+    },
+    {
+      "project": "JayVay widget",
+      "details": "Error fixes",
+      "client": "JayVay",
+      "rate": "20",
+      "startTime": "2023-11-08T15:30:00.000Z",
+      "endTime": "2023-11-08T17:30:00.000Z",
+      "id": "37"
+    },
+    {
+      "project": "Make Inc Website",
+      "details": "Updating Content",
+      "client": "Make Inc",
+      "rate": "10",
+      "startTime": "2023-11-08T07:00:00.000Z",
+      "endTime": "2023-11-08T10:30:00.000Z",
+      "id": "38"
+    },
+    {
+      "id": "39",
+      "project": "GC Flyer",
+      "details": "Flyer Design A5",
+      "client": "Greg Cooper",
+      "rate": "15",
+      "startTime": "2023-12-19T07:00:00.000Z",
+      "endTime": "2023-12-19T15:00:00.000Z"
+    },
+    {
+      "id": "40",
+      "project": "GC Flyer",
+      "details": "Flyer Design A6",
+      "client": "Greg Cooper",
+      "rate": "15",
+      "startTime": "2023-11-08T11:00:00.000Z",
+      "endTime": "2023-11-08T15:00:00.000Z"
+    },
+    {
+      "project": "GC Flyer",
+      "details": "Flyer Design",
+      "client": "Greg Cooper",
+      "rate": "15",
+      "startTime": "2023-12-13T07:00:00.000Z",
+      "endTime": "2023-12-13T14:30:00.000Z",
+      "id": "41"
+    },
+    {
+      "project": "JayVay widget",
+      "details": "testing posting",
+      "client": "JayVay",
+      "rate": "10",
+      "startTime": "2023-12-29T07:00:00.000Z",
+      "endTime": "2023-12-29T15:00:00.000Z",
+      "id": "42"
+    }
+  ]
+}

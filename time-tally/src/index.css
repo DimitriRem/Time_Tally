@@ -1,0 +1,436 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --mainBG1: #1b1b1b;
+  --toolboxBG: #222222;
+  --headerBG: #53457a;
+  --entryBoxHeaderBG: #53457a;
+  --entryContainerBG: #363636;
+  --mainTextColor: #c0c0c0;
+  --mainButtonBG: #3868ab;
+  --mainButtonBorder: #3680e7;
+  --highlightText: #eeeeee;
+  --deleteEntryBG: #7c3d3d;
+  --deleteButtonBG: #d51818;
+  --dateRowBG: #3a3645;
+  --dateRowBorder: #53457a;
+  --dateRowText: #c7c7c7;
+  --utilityItemBG: #53457a;
+  --deleteEntryText: #fff;
+  --trBottomBorder: #3a3645;
+  --updateDetailsBG: #363636;
+  --inputBG: #656565;
+  --inputTextColor: #eeeeee;
+  --statusBG: #eee;
+  --blackout: #000000b3;
+  --cancelButtonBG: #eee;
+  --cancelButtonText: #4f4f4f;
+  --filterBoxBorder: #8a8a8a;
+  --filterBoxBorderActivated: #53457a;
+  --filterBoxBGActivated: #332f40;
+  --filterBoxText: #8a8a8a;
+  --filterBoxInputBG: #525151;
+  --filterBoxInputText: #a9a9a9;
+}
+
+html {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 18px;
+}
+
+header {
+  background-color: var(--headerBG);
+  padding: 0 10px;
+  color: var(--mainTextColor);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  height: 50px;
+}
+#headerLeft {
+  flex-grow: 1;
+}
+#headerMiddle {
+  flex-grow: 1;
+  text-align: center;
+  overflow: hidden;
+}
+#headerRight {
+  flex-grow: 1;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+body {
+  background-color: var(--mainBG1);
+  height: 100%;
+}
+#desktopContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#toolbox {
+  max-width: 360px;
+  height: 92vh;
+  background-color: var(--toolboxBG);
+}
+
+.status {
+  width: 400px;
+  border: 1px solid var(--mainTextColor);
+  height: 40px;
+  border-radius: 10px;
+  opacity: 0;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  align-content: center;
+  transition: all 0.3s ease-in-out;
+  color: var(--mainTextColor);
+}
+
+.status.show {
+  opacity: 1;
+}
+
+#tableContainer {
+  height: 90vh;
+  overflow: auto;
+  width: 100%;
+}
+
+/* v------ TOOLBAR ------v */
+#toolbar {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.toolButton {
+  padding: 10px;
+  background-color: var(--entryContainerBG);
+  color: var(--mainTextColor);
+  border: 1px solid var(--filterBoxText);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.toolButton:hover {
+  background-color: var(--mainButtonBG);
+  color: var(--highlightText);
+  border-color: var(--mainButtonBorder);
+}
+.toolButtonCurrent {
+  padding: 10px;
+  color: var(--mainTextColor);
+  background-color: var(--entryBoxHeaderBG);
+  border: 0;
+  border-radius: 10px;
+}
+/* ^------ TOOLBAR end------^ */
+
+/* v------ ENTRY BLOCKS ------v */
+.entryContainer {
+  padding: 10px;
+  width: 350px;
+  border-radius: 8px;
+  margin: 10px auto;
+  background-color: var(--entryContainerBG);
+  color: var(--mainTextColor);
+}
+
+#blackout {
+  height: 100%;
+  background-color: var(--blackout);
+  position: absolute;
+  top: 50px;
+}
+
+#addProjectContainer {
+  position: relative;
+  top: 70px;
+}
+#addClientContainer {
+  position: relative;
+  top: 70px;
+}
+#addRateContainer {
+  position: relative;
+  top: 70px;
+}
+
+.entryHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: var(--headerBG);
+  justify-content: space-between;
+  padding: 5px;
+  color: var(--highlightText);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.cancelButton {
+  font-size: 0.8rem;
+  width: 100px;
+  font-weight: bold;
+  background-color: var(--cancelButtonBG);
+  color: var(--cancelButtonText);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 3px solid var(--cancelButtonText);
+}
+/* ^------ ENTRY BLOCKS end ------^ */
+
+#logForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.clientName {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.utility {
+  background-color: var(--utilityItemBG);
+}
+
+.buttonTotals {
+  font-weight: normal;
+  font-size: 0.8rem;
+}
+
+.mainButton,
+submit {
+  margin: 20px auto;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: var(--mainButtonBG);
+  color: var(--highlightText);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 3px solid var(--mainButtonBorder);
+}
+
+.deleteButton {
+  margin: 20px auto;
+  width: 80%;
+  height: 30px;
+  font-size: 0.8rem;
+  background-color: var(--deleteButtonBG);
+  color: var(--mainTextColor);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* v------ FORM STYLES ------v */
+input,
+select,
+textarea {
+  background-color: var(--inputBG);
+  color: var(--inputTextColor);
+  border: none;
+  border-radius: 3px;
+  height: 1rem;
+}
+#descriptionBox {
+  min-width: 200px;
+  min-height: 3rem;
+}
+/* ^------ FORM STYLES end ------^ */
+
+/* v------ TABLE STYLES ------v */
+#tableTop {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 10px auto;
+  color: var(--mainTextColor);
+}
+
+.re-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--mainTextColor);
+}
+.dateFilter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--filterBoxText);
+  border-radius: 20px;
+  background-color: var(--toolboxBG);
+  color: var(--filterBoxText);
+  height: 35px;
+  overflow: hidden;
+}
+
+.dateFilterActivated {
+  border: 2px solid var(--filterBoxBorderActivated);
+  background-color: var(--filterBoxBGActivated);
+}
+
+.dateFilter input {
+  background-color: var(--filterBoxInputBG);
+  color: var(--filterBoxInputText);
+}
+.filterHeader {
+  background-color: var(--entryContainerBG);
+  color: var(--mainTextColor);
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filterHeaderActivated {
+  background-color: var(--entryBoxHeaderBG);
+  color: var(--mainTextColor);
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.re-table {
+  border-collapse: collapse;
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  color: var(--mainTextColor);
+  font-size: 0.8rem;
+}
+
+.re-table tr {
+  border-bottom: 1px solid var(--trBottomBorder);
+}
+
+.re-table thead tr {
+  background-color: var(--headerBG);
+  color: var(--mainTextColor);
+  text-align: left;
+  font-weight: bold;
+}
+
+.re-table th,
+.re-table td {
+  padding: 0.3rem;
+}
+
+.re-dateRow {
+  border-top: 2px solid var(--dateRowBorder);
+  color: var(--dateRowText);
+  font-size: 0.6rem;
+  font-weight: bold;
+  background-image: linear-gradient(
+    to bottom,
+    var(--dateRowBG),
+    var(--mainBG1)
+  );
+}
+
+.re-col-narrow {
+  width: 8%;
+}
+
+.edit {
+  cursor: pointer;
+}
+
+.updateDetailsTd {
+  background-color: var(--updateDetailsBG);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.rowButton {
+  cursor: pointer;
+}
+.deleteCancel {
+  cursor: pointer;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.deleteConfirm {
+  background-color: var(--deleteEntryBG);
+  color: var(--deleteEntryText);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.confirmButton {
+  margin: 20px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--deleteEntryText);
+  background-color: var(--deleteButtonBG);
+  border: 3px solid var(--deleteEntryText);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.unavailable {
+  opacity: 30%;
+}
+/* ^------ TABLE STYLES end ------^ */
+
+@media (max-width: 850px) {
+  #desktopContainer {
+    flex-direction: column;
+  }
+  #toolbox {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--toolboxBG);
+  }
+  #tableContainer {
+    overflow: auto;
+  }
+  #tableTop {
+    flex-direction: column;
+    font-size: 0.8rem;
+  }
+  .re-table {
+    font-size: 0.5rem;
+    margin: 5px auto;
+    width: 90%;
+  }
+  .mainButton,
+  submit {
+    width: 80%;
+  }
+
+  .deleteButton {
+    width: 80%;
+  }
+}
