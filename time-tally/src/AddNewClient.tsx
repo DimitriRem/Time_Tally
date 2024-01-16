@@ -36,7 +36,6 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
     setNewClientDetails({ name: addClientName });
     setAddNewClientIsVisible(false);
     const result = api("/clients", "POST", newClientDetails);
-    console.log(result);
 
     setStatus("New client added.");
     fetchData();
