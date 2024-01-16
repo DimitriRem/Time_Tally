@@ -32,7 +32,7 @@ const ProjectsTableRow: React.FC<ProjectsTableRowProps> = ({ id, name, client })
       <tr>
         <td>{name}</td>
         <td>{client}</td>
-        <td>
+        <td className="rightTD">
           <span
             className="material-symbols-outlined rowButton"
             onClick={handleEdit}

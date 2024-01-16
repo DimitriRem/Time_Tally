@@ -9,6 +9,7 @@ const AddNewRate: React.FC<AddNewRateProps> = () => {
     currentNav,
     setRates,
     rates,
+    isSmallScreen,
     setAddNewRateIsVisible,
     api,
     setStatus,
@@ -21,6 +22,15 @@ const AddNewRate: React.FC<AddNewRateProps> = () => {
     label: "",
   });
   const [addRateNumber, setAddRateNumber] = useState("");
+
+  const [smallScreenOverride, setSmallScreenOverride] = useState<boolean>(false);
+
+  const handleExpand = () => {
+    setSmallScreenOverride(true);
+  }
+  const handleClose = () => {
+    setSmallScreenOverride(false);
+  }
 
   const hideCancel = currentNav === "rates";
 
@@ -53,44 +63,53 @@ const AddNewRate: React.FC<AddNewRateProps> = () => {
   };
 
   return (
-    <div id="addRateContainer" className="entryContainer">
-      <div className="entryHeader">
-        <span>Add a Rate</span>
-      </div>
-      <form onSubmit={handleAddRate} id="addRateForm">
-        <label htmlFor="addRateLabelBox">Rate Label:</label>
-        <input
-          type="text"
-          id="addRateLabelBox"
-          name="addRateLabelBox"
-          onChange={handleLabelChange}
-          placeholder="Enter rate label"
-          required
-        ></input>
-        <br />
-        <label htmlFor="addRateNumberBox">Rate: $</label>
-        <input
-          type="text"
-          id="addRateNumberBox"
-          name="addRateNumberBox"
-          onChange={handleNumberChange}
-          placeholder="00"
-          required
-        ></input>
-        /hr
-        <button type="submit" id="addRateButton" className="mainButton">
-          Add Rate
-        </button>
-        <br />
-        <button
-          className="cancelButton"
-          onClick={addNewRateClose}
-          hidden={hideCancel}
-        >
-          Cancel
-        </button>
-      </form>
-    </div>
+    <>
+      {isSmallScreen && !smallScreenOverride ? <button className="smallScreenAddButton"
+        onClick={handleExpand}>
+        Add a New Rate
+      </button>
+        :
+        <div id="addRateContainer" className="entryContainer">
+          <div className="entryHeader">
+            Add a New Rate {isSmallScreen ? <button className="cancelButton" onClick={handleClose}>
+              Cancel
+            </button> : ""}
+          </div>
+          <form onSubmit={handleAddRate} id="addRateForm">
+            <label htmlFor="addRateLabelBox">Rate Label:</label>
+            <input
+              type="text"
+              id="addRateLabelBox"
+              name="addRateLabelBox"
+              onChange={handleLabelChange}
+              placeholder="Enter rate label"
+              required
+            ></input>
+            <br />
+            <label htmlFor="addRateNumberBox">Rate: $</label>
+            <input
+              type="number"
+              id="addRateNumberBox"
+              name="addRateNumberBox"
+              onChange={handleNumberChange}
+              placeholder="00"
+              required
+            ></input>
+            /hr
+            <button type="submit" id="addRateButton" className="mainButton">
+              Add Rate
+            </button>
+            <br />
+            <button
+              className="cancelButton"
+              onClick={addNewRateClose}
+              hidden={hideCancel}
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      }</>
   );
 };
 

@@ -30,7 +30,7 @@ const ClientsTableRow: React.FC<ClientsTableRowProps> = ({ id, name }) => {
     <React.Fragment>
       <tr>
         <td>{name}</td>
-        <td>
+        <td className="rightTD">
           <span
             className="material-symbols-outlined rowButton"
             onClick={handleEdit}

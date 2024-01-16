@@ -21,19 +21,9 @@
       "id": "4"
     },
     {
-      "rate": "5",
-      "label": "Discount Dev",
-      "id": "5"
-    },
-    {
       "id": "201f",
       "rate": "15",
       "label": "Rate for Deleting"
-    },
-    {
-      "id": "40ed",
-      "rate": "23",
-      "label": "testing on new"
     }
   ],
   "clients": [
@@ -54,16 +44,8 @@
       "id": "4"
     },
     {
-      "id": "9b46",
-      "name": "Dimitri"
-    },
-    {
-      "id": "c78e",
-      "name": "Doncaster"
-    },
-    {
-      "id": "a786",
-      "name": "ChillyPills"
+      "id": "fe26",
+      "name": "Haley's Porcelain"
     }
   ],
   "projects": [
@@ -96,6 +78,16 @@
       "id": "6",
       "name": "GC Flyer",
       "client": "Greg Cooper"
+    },
+    {
+      "id": "7487",
+      "name": "Tester project",
+      "client": "Haley's Porcelain"
+    },
+    {
+      "id": "0eae",
+      "name": "JayVay sms app",
+      "client": "Acmecorp"
     }
   ],
   "log": [

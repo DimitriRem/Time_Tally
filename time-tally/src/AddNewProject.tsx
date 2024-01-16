@@ -10,6 +10,7 @@ const AddNewProject: React.FC<AddNewProjectProps> = () => {
     clients,
     currentNav,
     projects,
+    isSmallScreen,
     addNewClientPop,
     setProjects,
     setAddNewProjectIsVisible,
@@ -24,6 +25,15 @@ const AddNewProject: React.FC<AddNewProjectProps> = () => {
     name: "",
     client: "",
   });
+
+  const [smallScreenOverride, setSmallScreenOverride] = useState<boolean>(false);
+
+  const handleExpand = () => {
+    setSmallScreenOverride(true);
+  }
+  const handleClose = () => {
+    setSmallScreenOverride(false);
+  }
 
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAddProjectName(event.target.value);
@@ -71,50 +81,59 @@ const AddNewProject: React.FC<AddNewProjectProps> = () => {
   };
 
   return (
-    <div id="addProjectContainer" className="entryContainer">
-      <div className="entryHeader">
-        <span>Add a Project</span>
-      </div>
-      <form onSubmit={handleAddProject} id="addProjectForm">
-        <label htmlFor="projectNameBox">Project Name:</label>
-        <input
-          type="text"
-          id="addProjectName"
-          name="addProjectName"
-          onChange={handleNameChange}
-          placeholder="Enter project name"
-          required
-        ></input>
-        <br />
-        <label htmlFor="clientList">Client:</label>
-        <select
-          id="clientList"
-          name="clientList"
-          onChange={handleClientChange}
-          required
-        >
-          <option value="-1">Select Client</option>
-          <option value="-2" className="utility">
-            + Add a new Client
-          </option>
-          {clients.map((client) => (
-            <ClientOption key={client.id} id={client.id} name={client.name} />
-          ))}
-        </select>
+    <>
+      {isSmallScreen && !smallScreenOverride ? <button className="smallScreenAddButton"
+        onClick={handleExpand}>
+        Add a New Project
+      </button>
+        :
+        <div id="addProjectContainer" className="entryContainer">
+          <div className="entryHeader">
+            Add a New Project{isSmallScreen ? <button className="cancelButton" onClick={handleClose}>
+              Cancel
+            </button> : ""}
+          </div>
+          <form onSubmit={handleAddProject} id="addProjectForm">
+            <label htmlFor="projectNameBox">Project Name:</label>
+            <input
+              type="text"
+              id="addProjectName"
+              name="addProjectName"
+              onChange={handleNameChange}
+              placeholder="Enter project name"
+              required
+            ></input>
+            <br />
+            <label htmlFor="clientList">Client:</label>
+            <select
+              id="clientList"
+              name="clientList"
+              onChange={handleClientChange}
+              required
+            >
+              <option value="-1">Select Client</option>
+              <option value="-2" className="utility">
+                + Add a new Client
+              </option>
+              {clients.map((client) => (
+                <ClientOption key={client.id} id={client.id} name={client.name} />
+              ))}
+            </select>
 
-        <button type="submit" id="addProjectButton" className="mainButton">
-          Add Project
-        </button>
-        <br />
-        <button
-          className="cancelButton"
-          onClick={addNewProjectClose}
-          hidden={hideCancel}
-        >
-          Cancel
-        </button>
-      </form>
-    </div>
+            <button type="submit" id="addProjectButton" className="mainButton">
+              Add Project
+            </button>
+            <br />
+            <button
+              className="cancelButton"
+              onClick={addNewProjectClose}
+              hidden={hideCancel}
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      }</>
   );
 };
 

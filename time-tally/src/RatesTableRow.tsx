@@ -35,8 +35,8 @@ const RatesTableRow: React.FC<RatesTableRowProps> = ({ id, rate, label }) => {
     <React.Fragment>
       <tr>
         <td>{label}</td>
-        <td>{rate}</td>
-        <td>
+        <td>${rate}/hr</td>
+        <td className="rightTD">
           <span
             className="material-symbols-outlined rowButton"
             onClick={handleEdit}

@@ -28,7 +28,7 @@ const DeleteClient: React.FC<DeleteClientProps> = ({ name, id, setIsDeleteModalO
   return (
     <tr>
       <td colSpan={3} className="deleteConfirm">
-        Are you sure you want to delete Client "{name}"? <br />
+        Are you sure you want to delete Client "{name}"?
         <br />
         <button onClick={confirmDelete} className="confirmButton">
           Yes, delete client!

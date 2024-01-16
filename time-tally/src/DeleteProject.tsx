@@ -29,7 +29,7 @@ const DeleteProject: React.FC<DeleteProjectProps> = ({ name, id, setIsDeleteModa
   return (
     <tr>
       <td colSpan={3} className="deleteConfirm">
-        Are you sure you want to delete project "{name}"? <br />
+        Are you sure you want to delete project "{name}"?
         <br />
         <button onClick={confirmDelete} className="confirmButton">
           Yes, delete it!

@@ -28,7 +28,7 @@ const DeleteEntry: React.FC<DeleteEntryProps> = ({ details, project, id, setIsDe
   return (
     <tr>
       <td colSpan={9} className="deleteConfirm">
-        Are you sure you want to delete the above entry? <br />
+        Are you sure you want to delete the above entry?
         <span style={{ fontWeight: "normal" }}>
           ({details} for {project})
         </span>

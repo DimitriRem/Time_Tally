@@ -15,8 +15,8 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
   const {
     currentNav,
     setStatus,
-    addNewClientClose,
     setAddNewClientIsVisible,
+    isSmallScreen,
     api,
     fetchData,
   } = useContext(DataContext);
@@ -24,6 +24,14 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setAddClientName(event.target.value);
   };
+  const [smallScreenOverride, setSmallScreenOverride] = useState<boolean>(false);
+
+  const handleExpand = () => {
+    setSmallScreenOverride(true);
+  }
+  const handleClose = () => {
+    setSmallScreenOverride(false);
+  }
 
   const hideCancel = currentNav === "clients";
 
@@ -46,34 +54,38 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
   }, [addClientName]);
 
   return (
-    <div id="addClientContainer" className="entryContainer">
-      <div className="entryHeader">
-        <span>Add a Client</span>
-      </div>
-      <form onSubmit={handleAddClient} id="addClientForm">
-        <label htmlFor="addClientName">Client Name:</label>
-        <input
-          type="text"
-          id="addClientName"
-          name="addClientName"
-          value={addClientName}
-          onChange={handleNameChange}
-          placeholder="Enter client name"
-          required
-        />
-        <button type="submit" id="addClientButton" className="mainButton">
-          Add Client
-        </button>
-        <br />
-        <button
-          className="cancelButton"
-          onClick={addNewClientClose}
-          hidden={hideCancel}
-        >
-          Cancel
-        </button>
-      </form>
-    </div>
+    <>
+      {isSmallScreen && !smallScreenOverride ? <button className="smallScreenAddButton"
+        onClick={handleExpand}>
+        Add a New Client
+      </button>
+        :
+
+        <div id="addClientContainer" className="entryContainer">
+          <div className="entryHeader">
+            Add a New Client {isSmallScreen ? <button className="cancelButton" onClick={handleClose}>
+              Cancel
+            </button> : ""}
+
+          </div>
+          <form onSubmit={handleAddClient} id="addClientForm">
+            <label htmlFor="addClientName">Client Name: </label>
+            <input
+              type="text"
+              id="addClientName"
+              name="addClientName"
+              value={addClientName}
+              onChange={handleNameChange}
+              placeholder="Enter client name"
+              required
+            />
+            <button type="submit" id="addClientButton" className="mainButton">
+              Add Client
+            </button>
+
+          </form>
+        </div>
+      }</>
   );
 };
 

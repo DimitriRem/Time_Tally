@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 import { api } from "../utils/api";
 
+
 interface LogItem {
     project: string;
     details: string;
@@ -37,6 +38,7 @@ interface DataContextType {
     currentNav: string;
     fetchError: string;
     isLoading: boolean;
+    isSmallScreen: boolean;
     logItems: LogItem[];
     newLogItem: object;
     projects: Project[];
@@ -71,6 +73,7 @@ const DataContext = createContext<DataContextType>({
     currentNav: "",
     fetchError: "",
     isLoading: false,
+    isSmallScreen: false,
     logItems: [],
     newLogItem: {},
     projects: [],
@@ -130,6 +133,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
     const [addNewClientIsVisible, setAddNewClientIsVisible] = useState<boolean>(false);
     const [addNewRateIsVisible, setAddNewRateIsVisible] = useState<boolean>(false);
     const [currentNav, setCurrentNav] = useState<string>("log");
+    const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
 
     const fetchData = async () => {
         try {
@@ -174,7 +178,11 @@ export const DataProvider = ({ children }: DataProviderProps) => {
     }, []);
 
     useEffect(() => {
-        let timeoutId: NodeJS.Timeout;
+        window.innerWidth < 850 ? setIsSmallScreen(true) : setIsSmallScreen(false);
+    }, []);
+
+    useEffect(() => {
+        let timeoutId: any;
 
         if (status !== "") {
             timeoutId = setTimeout(() => {
@@ -211,6 +219,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
         setAddNewRateIsVisible(false);
     };
 
+
     return (
         <DataContext.Provider
             value={{
@@ -228,6 +237,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
                 currentNav,
                 logItems,
                 isLoading,
+                isSmallScreen,
                 fetchData,
                 fetchError,
                 newLogItem,

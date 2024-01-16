@@ -8,7 +8,7 @@ const TimeEntry = () => {
     projects,
     rates,
     newLogItem,
-    logItems,
+    isSmallScreen,
     setStatus,
     setNewLogItem,
     addNewProjectPop,
@@ -33,6 +33,12 @@ const TimeEntry = () => {
   const mainTextColorStyle = {
     color: "var(--mainTextColor)",
   };
+
+  const [smallScreenOverride, setSmallScreenOverride] = useState<boolean>(false);
+
+  const handleExpand = () => {
+    setSmallScreenOverride(true);
+  }
 
   const handleProjectOptionChange: React.ChangeEventHandler<HTMLSelectElement> = (
     event: React.ChangeEvent<HTMLSelectElement>
@@ -128,94 +134,101 @@ const TimeEntry = () => {
 
 
   return (
-    <div id="timeEntryContainer" className="entryContainer">
-      Log time for
-      <form className="logForm" onSubmit={handleFormSubmit}>
-        <div id="timeEntryHeader" className="entryHeader">
-          <div className="entryHeaderLeft">
-            <div id="projectName" className="projectName">
-              {projects[currentProjectIndex].name}
+    <>
+      {isSmallScreen && !smallScreenOverride ? <button className="smallScreenAddButton"
+        onClick={handleExpand}>
+        Add a New Entry
+      </button>
+        :
+        <div id="timeEntryContainer" className="entryContainer">
+          Log time for
+          <form className="logForm" onSubmit={handleFormSubmit}>
+            <div id="timeEntryHeader" className="entryHeader">
+              <div className="entryHeaderLeft">
+                <div id="projectName" className="projectName">
+                  {projects[currentProjectIndex].name}
+                </div>
+                <div id="clientName" className="clientName">
+                  <span style={mainTextColorStyle}>for</span>{" "}
+                  {projects[currentProjectIndex].client}
+                </div>
+              </div>
+              <div id="projectSelector">
+                <span style={mainTextColorStyle}>or</span>{" "}
+                <select name="project" onChange={handleProjectOptionChange}>
+                  <option value="">Another Project</option>
+                  <option value="-2" className="utility">
+                    + Add a new Project
+                  </option>
+                  {projects.map((project) => (
+                    <ProjectOption
+                      key={project.id}
+                      id={project.id}
+                      name={project.name}
+                    />
+                  ))}
+                </select>
+              </div>
             </div>
-            <div id="clientName" className="clientName">
-              <span style={mainTextColorStyle}>for</span>{" "}
-              {projects[currentProjectIndex].client}
-            </div>
-          </div>
-          <div id="projectSelector">
-            <span style={mainTextColorStyle}>or</span>{" "}
-            <select name="project" onChange={handleProjectOptionChange}>
-              <option value="">Another Project</option>
-              <option value="-2" className="utility">
-                + Add a new Project
-              </option>
-              {projects.map((project) => (
-                <ProjectOption
-                  key={project.id}
-                  id={project.id}
-                  name={project.name}
-                />
-              ))}
-            </select>
-          </div>
-        </div>
-        <div id="logFormLeft">
-          <label htmlFor="startTime">Start time: </label>
-          <input
-            type="time"
-            id="startTime"
-            name="startTime"
-            onChange={handleStartTimeChange}
-            required
-          />{" "}
-          <input type="date" value={formDate} onChange={handleDateChange} />
-          <br />
-          <label htmlFor="endTime">End time: </label>
-          <input
-            type="time"
-            id="endTime"
-            name="endTime"
-            onChange={handleEndTimeChange}
-            required
-          />
-          <br />
-          <label htmlFor="rate">Rate: </label>
-          <select id="rate" name="rate" onChange={handleRateOptionChange}>
-            {rates.map((rate) => (
-              <RateOption
-                key={rate.id}
-                id={rate.id}
-                rate={rate.rate}
-                label={rate.label}
+            <div id="logFormLeft">
+              <label htmlFor="startTime">Start time: </label>
+              <input
+                type="time"
+                id="startTime"
+                name="startTime"
+                onChange={handleStartTimeChange}
+                required
+              />{" "}
+              <input type="date" value={formDate} onChange={handleDateChange} />
+              <br />
+              <label htmlFor="endTime">End time: </label>
+              <input
+                type="time"
+                id="endTime"
+                name="endTime"
+                onChange={handleEndTimeChange}
+                required
               />
-            ))}
-            <option value="-2" className="utility">
-              Add a new rate
-            </option>
-          </select>
+              <br />
+              <label htmlFor="rate">Rate: </label>
+              <select id="rate" name="rate" onChange={handleRateOptionChange}>
+                {rates.map((rate) => (
+                  <RateOption
+                    key={rate.id}
+                    id={rate.id}
+                    rate={rate.rate}
+                    label={rate.label}
+                  />
+                ))}
+                <option value="-2" className="utility">
+                  Add a new rate
+                </option>
+              </select>
+            </div>
+
+            <label htmlFor="descriptionBox">Work details:</label>
+            <br />
+            <textarea
+              id="descriptionBox"
+              required
+              name="descriptionBox"
+              placeholder="Describe what was done."
+              rows={4}
+              cols={5}
+              value={details}
+              onChange={handleDetailsChange}
+            ></textarea>
+
+            <button type="submit" id="submitHours" className="mainButton">
+              Submit Hours
+              <br />
+              <span className="buttonTotals">
+                (Total: {totalHours}hrs, ${totalFee})
+              </span>
+            </button>
+          </form>
         </div>
-
-        <label htmlFor="descriptionBox">Work details:</label>
-        <br />
-        <textarea
-          id="descriptionBox"
-          required
-          name="descriptionBox"
-          placeholder="Describe what was done."
-          rows={4}
-          cols={5}
-          value={details}
-          onChange={handleDetailsChange}
-        ></textarea>
-
-        <button type="submit" id="submitHours" className="mainButton">
-          Submit Hours
-          <br />
-          <span className="buttonTotals">
-            (Total: {totalHours}hrs, ${totalFee})
-          </span>
-        </button>
-      </form>
-    </div>
+      }</>
   );
 };
 

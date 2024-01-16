@@ -1,7 +1,7 @@
 import { useContext, useMemo } from "react";
 import DataContext from "./context/DataContext";
 
-const dateOptions:object = {
+const dateOptions: object = {
   weekday: "short",
   day: "2-digit",
   month: "short",
@@ -18,10 +18,7 @@ const Header = () => {
       <div id="headerLeft">
         <h1>TimeTally</h1>
       </div>
-
-      <div id="headerMiddle">
-        <div className={`status ${status !== "" ? "show" : ""}`}>{status}</div>
-      </div>
+      <div className={`status ${status !== "" ? "show" : ""}`}>{status}</div>
       <div id="headerRight">{date}</div>
     </header>
   );

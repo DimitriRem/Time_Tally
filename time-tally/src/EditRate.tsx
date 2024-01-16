@@ -94,13 +94,13 @@ const EditRate: React.FC<EditRateProps> = ({ label, id, rate, setIsEditModalOpen
           />
           <br />
           <label htmlFor="rateAmount">Rate Amount: </label>
-          <input
+          $<input
             type="number"
             id="rateAmount"
             name="rateAmount"
             defaultValue={rate}
             onChange={handleAmountUpdate}
-          />
+          /> /hr
           <br />
           <button type="submit" id="updateClientButton" className="mainButton">
             Update Rate

@@ -28,7 +28,7 @@ const DeleteRate: React.FC<DeleteRateProps> = ({ label, id, rate, setIsDeleteMod
   return (
     <tr>
       <td colSpan={3} className="deleteConfirm">
-        Are you sure you want to delete rate "{label}"? <br />
+        Are you sure you want to delete rate "{label}"?
         <br />
         <button onClick={confirmDelete} className="confirmButton">
           Yes, delete rate!

@@ -22,21 +22,15 @@ const Toolbox = () => {
       <Toolbar />
       {!fetchError && !isLoading && currentNav === "log" ? <TimeEntry /> : ""}
       {addNewProjectIsVisible && (
-        <div id="blackout">
-          <AddNewProject />
-        </div>
+        <AddNewProject />
       )}
       {currentNav === "projects" ? <AddNewProject /> : ""}
       {addNewClientIsVisible && (
-        <div id="blackout">
-          <AddNewClient />
-        </div>
+        <AddNewClient />
       )}
       {currentNav === "clients" ? <AddNewClient /> : ""}
       {addNewRateIsVisible && (
-        <div id="blackout">
-          <AddNewRate />
-        </div>
+        <AddNewRate />
       )}
       {currentNav === "rates" ? <AddNewRate /> : ""}
     </>

@@ -77,7 +77,7 @@ const LogTableRow: React.FC<LogTableRowProps> = ({
         <td>{endTimeString}</td>
         <td>{numberOfHours && `${numberOfHours.toFixed(1)}hrs`}</td>
         <td>${numberOfHours && (numberOfHours * Number(rate)).toFixed(2)}</td>
-        <td>
+        <td className="rightTD">
           <span
             className="material-symbols-outlined rowButton"
             onClick={handleEdit}

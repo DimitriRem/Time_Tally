@@ -24,9 +24,10 @@
   --trBottomBorder: #3a3645;
   --updateDetailsBG: #363636;
   --inputBG: #656565;
-  --inputTextColor: #eeeeee;
+  --inputTextColor: #fff;
+  --inputPlaceholderColor: #c2c2c2;
   --statusBG: #eee;
-  --blackout: #000000b3;
+  --statusText: #53457a;
   --cancelButtonBG: #eee;
   --cancelButtonText: #4f4f4f;
   --filterBoxBorder: #8a8a8a;
@@ -44,7 +45,7 @@ html {
 
 header {
   background-color: var(--headerBG);
-  padding: 0 10px;
+  padding: 5px 10px;
   color: var(--mainTextColor);
   width: 100%;
   display: flex;
@@ -52,20 +53,9 @@ header {
   justify-content: space-between;
   align-content: center;
   align-items: center;
-  height: 50px;
 }
-#headerLeft {
-  flex-grow: 1;
-}
-#headerMiddle {
-  flex-grow: 1;
-  text-align: center;
-  overflow: hidden;
-}
+
 #headerRight {
-  flex-grow: 1;
-  height: 40px;
-  line-height: 40px;
   text-align: right;
 }
 
@@ -88,22 +78,23 @@ body {
 
 #toolbox {
   max-width: 360px;
-  height: 92vh;
-  background-color: var(--toolboxBG);
 }
 
 .status {
-  width: 400px;
+  position: absolute;
+  left: 100px;
+  top: 5px;
   border: 1px solid var(--mainTextColor);
   height: 40px;
-  border-radius: 10px;
+  border-radius: 5px;
   opacity: 0;
   padding: 5px 10px;
   text-align: center;
   font-size: 1.2rem;
   align-content: center;
   transition: all 0.3s ease-in-out;
-  color: var(--mainTextColor);
+  color: var(--statusText);
+  background-color: var(--statusBG);
 }
 
 .status.show {
@@ -124,6 +115,7 @@ body {
   align-items: baseline;
   gap: 10px;
   padding: 10px 0;
+  background-color: var(--toolboxBG);
 }
 
 .toolButton {
@@ -165,29 +157,16 @@ body {
   top: 50px;
 }
 
-#addProjectContainer {
-  position: relative;
-  top: 70px;
-}
-#addClientContainer {
-  position: relative;
-  top: 70px;
-}
-#addRateContainer {
-  position: relative;
-  top: 70px;
-}
-
 .entryHeader {
   display: flex;
-  flex-direction: column;
-  align-items: left;
+  flex-direction: row;
   background-color: var(--headerBG);
   justify-content: space-between;
   padding: 5px;
   color: var(--highlightText);
   font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .cancelButton {
@@ -223,7 +202,7 @@ body {
 
 .mainButton,
 submit {
-  margin: 20px auto;
+  margin: 10px auto;
   font-size: 1.2rem;
   font-weight: bold;
   background-color: var(--mainButtonBG);
@@ -231,6 +210,21 @@ submit {
   border-radius: 10px;
   cursor: pointer;
   padding: 1rem 2rem;
+  border: 3px solid var(--mainButtonBorder);
+}
+
+.smallScreenAddButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  font-size: 1rem;
+  background-color: var(--mainButtonBG);
+  color: var(--highlightText);
+  border-radius: 10px;
+  cursor: pointer;
+  padding: 10px;
+  width: fit-content;
   border: 3px solid var(--mainButtonBorder);
 }
 
@@ -253,7 +247,12 @@ textarea {
   color: var(--inputTextColor);
   border: none;
   border-radius: 3px;
-  height: 1rem;
+  height: 1.3rem;
+  padding: 5px;
+  margin: 5px;
+}
+::placeholder {
+  color: var(--inputPlaceholderColor);
 }
 #descriptionBox {
   min-width: 200px;
@@ -343,6 +342,9 @@ textarea {
 .re-table td {
   padding: 0.3rem;
 }
+.rightTD {
+  text-align: right;
+}
 
 .re-dateRow {
   border-top: 2px solid var(--dateRowBorder);
@@ -388,7 +390,7 @@ textarea {
 }
 
 .confirmButton {
-  margin: 20px;
+  margin: 10px;
   padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
@@ -408,10 +410,24 @@ textarea {
   #desktopContainer {
     flex-direction: column;
   }
+  #header {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  #headerRight {
+    font-size: 0.8rem;
+  }
   #toolbox {
     width: 100%;
-    height: fit-content;
-    background-color: var(--toolboxBG);
   }
   #tableContainer {
     overflow: auto;
@@ -420,14 +436,37 @@ textarea {
     flex-direction: column;
     font-size: 0.8rem;
   }
+  .dateFilter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--filterBoxText);
+    border-radius: 20px;
+    background-color: var(--toolboxBG);
+    color: var(--filterBoxText);
+    overflow: hidden;
+  }
+  .entryHeader {
+    font-size: 1.1rem;
+  }
   .re-table {
-    font-size: 0.5rem;
+    font-size: 0.9rem;
     margin: 5px auto;
     width: 90%;
   }
   .mainButton,
   submit {
     width: 80%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .confirmButton {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--deleteEntryText);
   }
 
   .deleteButton {
