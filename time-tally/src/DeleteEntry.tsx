@@ -9,7 +9,7 @@ interface DeleteEntryProps {
 }
 
 const DeleteEntry: React.FC<DeleteEntryProps> = ({ details, project, id, setIsDeleteModalOpen }) => {
-  const { api, setStatus, setFetchError, fetchData } = useContext(DataContext);
+  const { api, setStatus, fetchData } = useContext(DataContext);
   const confirmDelete = () => {
     deleteEntry(id);
 

@@ -120,7 +120,6 @@ const TimeEntry = () => {
     if (!newLogItem) {
       return;
     }
-    const listLogItems = [...logItems, newLogItem];
     const result: any = await api("/log", "POST", newLogItem);
     setStatus("Hours submitted");
     fetchData();

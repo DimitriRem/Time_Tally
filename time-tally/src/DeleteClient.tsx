@@ -8,7 +8,7 @@ interface DeleteClientProps {
 }
 
 const DeleteClient: React.FC<DeleteClientProps> = ({ name, id, setIsDeleteModalOpen }) => {
-  const { api, setStatus, setFetchError, fetchData } = useContext(DataContext);
+  const { api, setStatus, fetchData } = useContext(DataContext);
 
   const confirmDelete = () => {
     deleteClient(id);

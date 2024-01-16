@@ -8,7 +8,7 @@ interface EditRateProps {
   setIsEditModalOpen: (isOpen: boolean) => void;
 }
 const EditRate: React.FC<EditRateProps> = ({ label, id, rate, setIsEditModalOpen }) => {
-  const { api, setStatus, setFetchError, fetchData, logItems } =
+  const { api, setStatus, fetchData, logItems } =
     useContext(DataContext);
 
   const [updatedRateLabel, setUpdatedRateLabel] = useState(label);

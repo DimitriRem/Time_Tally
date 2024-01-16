@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from "react";
+import { useContext, useMemo } from "react";
 import DataContext from "./context/DataContext";
 import ProjectsTableRow from "./ProjectsTableRow";
 

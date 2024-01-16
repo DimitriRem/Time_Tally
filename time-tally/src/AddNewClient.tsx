@@ -13,7 +13,6 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
     name: "",
   });
   const {
-    clients,
     currentNav,
     setStatus,
     addNewClientClose,
@@ -35,9 +34,10 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
 
   const addClient = async () => {
     setNewClientDetails({ name: addClientName });
-    const listClients = [...clients, newClientDetails];
     setAddNewClientIsVisible(false);
     const result = api("/clients", "POST", newClientDetails);
+    console.log(result);
+
     setStatus("New client added.");
     fetchData();
   };

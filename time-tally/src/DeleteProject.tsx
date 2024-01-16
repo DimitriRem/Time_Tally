@@ -8,7 +8,7 @@ interface DeleteProjectProps {
 }
 
 const DeleteProject: React.FC<DeleteProjectProps> = ({ name, id, setIsDeleteModalOpen }) => {
-  const { api, setStatus, setFetchError, fetchData } = useContext(DataContext);
+  const { api, setStatus, fetchData } = useContext(DataContext);
 
   const confirmDelete = () => {
     deleteProject(id);
@@ -22,6 +22,7 @@ const DeleteProject: React.FC<DeleteProjectProps> = ({ name, id, setIsDeleteModa
 
   const deleteProject = async (id: string) => {
     const result = api(`/projects/${id}`, "DELETE", "");
+
     setStatus("Project deleted");
   };
 

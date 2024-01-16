@@ -52,6 +52,18 @@
     {
       "name": "Greg Cooper",
       "id": "4"
+    },
+    {
+      "id": "9b46",
+      "name": "Dimitri"
+    },
+    {
+      "id": "c78e",
+      "name": "Doncaster"
+    },
+    {
+      "id": "a786",
+      "name": "ChillyPills"
     }
   ],
   "projects": [
@@ -84,11 +96,6 @@
       "id": "6",
       "name": "GC Flyer",
       "client": "Greg Cooper"
-    },
-    {
-      "id": "be86",
-      "name": "getridof",
-      "client": "Make Inc"
     }
   ],
   "log": [
