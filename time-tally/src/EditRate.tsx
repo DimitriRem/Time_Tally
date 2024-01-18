@@ -106,7 +106,7 @@ const EditRate: React.FC<EditRateProps> = ({ label, id, rate, setIsEditModalOpen
             Update Rate
           </button>
         </form>
-        <button className="cancelButton" onClick={cancelEdit}>
+        <button className="toolButton" onClick={cancelEdit}>
           Cancel
         </button>
       </td>

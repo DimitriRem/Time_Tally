@@ -18,7 +18,7 @@ const ProjectInform: React.FC<ProjectInformProps> = ({ setIsInformModalOpen }) =
         </span>
         <br />
         <br />
-        <button className="cancelButton" onClick={cancelDelete}>
+        <button className="toolButton" onClick={cancelDelete}>
           Close
         </button>
       </td>

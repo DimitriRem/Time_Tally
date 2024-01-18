@@ -34,7 +34,7 @@ const DeleteRate: React.FC<DeleteRateProps> = ({ label, id, rate, setIsDeleteMod
           Yes, delete rate!
         </button>
         <br />
-        <button className="cancelButton" onClick={cancelDelete}>
+        <button className="toolButton" onClick={cancelDelete}>
           Cancel
         </button>
       </td>

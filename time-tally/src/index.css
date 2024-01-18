@@ -5,6 +5,135 @@
 }
 
 :root {
+  --mainBG1-light: #ededed;
+  --mainBG1-dark: #1b1b1b;
+  --toolboxBG-light: #c1cedd;
+  --toolboxBG-dark: #222222;
+  --headerBG-light: #316cb0;
+  --headerBG-dark: #53457a;
+  --entryBoxHeaderBG-light: #316cb0;
+  --entryBoxHeaderBG-dark: #53457a;
+  --entryContainerBG-light: #c1cedd;
+  --entryContainerBG-dark: #363636;
+  --mainTextColor-light: #181818;
+  --mainTextColor-dark: #c0c0c0;
+  --mainButtonBG-light: #2d9640;
+  --mainButtonBG-dark: #3868ab;
+  --mainButtonBorder-light: #266932;
+  --mainButtonBorder-dark: #3680e7;
+  --highlightText-light: #f4f4f4;
+  --highlightText-dark: #eeeeee;
+  --deleteEntryBG-light: #bf6363;
+  --deleteEntryBG-dark: #7c3d3d;
+  --deleteButtonBG-light: #d51818;
+  --deleteButtonBG-dark: #d51818;
+  --dateRowBG-light: #a2bad4;
+  --dateRowBG-dark: #3a3645;
+  --dateRowBorder-light: #316cb0;
+  --dateRowBorder-dark: #316cb0;
+  --dateRowText-light: #316cb0;
+  --dateRowText-dark: #c7c7c7;
+  --deleteEntryText-light: #fff;
+  --deleteEntryText-dark: #fff;
+  --trBottomBorder-light: #b9b9b9;
+  --trBottomBorder-dark: #3a3645;
+  --updateDetailsBG-light: #c1cedd;
+  --updateDetailsBG-dark: #363636;
+  --inputBG-light: #e4ecf5;
+  --inputBG-dark: #656565;
+  --inputTextColor-light: #181818;
+  --inputTextColor-dark: #fff;
+  --inputPlaceholderColor-light: #a6a5a5;
+  --inputPlaceholderColor-dark: #c2c2c2;
+  --statusBG-light: #eee;
+  --statusBG-dark: #eee;
+  --statusText-light: #316cb0;
+  --statusText-dark: #316cb0;
+  --cancelButtonBG-light: #eee;
+  --cancelButtonBG-dark: #eee;
+  --cancelButtonText-light: #4f4f4f;
+  --cancelButtonText-dark: #4f4f4f;
+  --filterBoxBorder-light: #8a8a8a;
+  --filterBoxBorder-dark: #8a8a8a;
+  --filterBoxBorderActivated-light: #316cb0;
+  --filterBoxBorderActivated-dark: #316cb0;
+  --filterBoxBGActivated-light: #c1cedd;
+  --filterBoxBGActivated-dark: #332f40;
+  --filterBoxText-light: #393939;
+  --filterBoxText-dark: #8a8a8a;
+  --filterBoxInputBG-light: #e4ecf5;
+  --filterBoxInputBG-dark: #525151;
+  --filterBoxInputText-light: #181818;
+  --filterBoxInputText-dark: #a9a9a9;
+}
+.dark-theme {
+  background-color: var(--mainBG1);
+  --mainBG1: var(--mainBG1-dark);
+  --headerBG: var(--headerBG-dark);
+  --toolboxBG: var(--toolboxBG-dark);
+  --entryBoxHeaderBG: var(--entryBoxHeaderBG-dark);
+  --entryContainerBG: var(--entryContainerBG-dark);
+  --mainTextColor: var(--mainTextColor-dark);
+  --mainButtonBG: var(--mainButtonBG-dark);
+  --mainButtonBorder: var(--mainButtonBorder-dark);
+  --highlightText: var(--highlightText-dark);
+  --deleteEntryBG: var(--deleteEntryBG-dark);
+  --deleteButtonBG: var(--deleteButtonBG-dark);
+  --dateRowBG: var(--dateRowBG-dark);
+  --dateRowBorder: var(--dateRowBorder-dark);
+  --dateRowText: var(--dateRowText-dark);
+  --deleteEntryText: var(--deleteEntryText-dark);
+  --trBottomBorder: var(--trBottomBorder-dark);
+  --updateDetailsBG: var(--updateDetailsBG-dark);
+  --inputBG: var(--inputBG-dark);
+  --inputTextColor: var(--inputTextColor-dark);
+  --inputPlaceholderColor: var(--inputPlaceholderColor-dark);
+  --statusBG: var(--statusBG-dark);
+  --statusText: var(--statusText-dark);
+  --cancelButtonBG: var(--cancelButtonBG-dark);
+  --cancelButtonText: var(--cancelButtonText-dark);
+  --filterBoxBorder: var(--filterBoxBorder-dark);
+  --filterBoxBorderActivated: var(--filterBoxBorderActivated-dark);
+  --filterBoxBGActivated: var(--filterBoxBGActivated-dark);
+  --filterBoxText: var(--filterBoxText-dark);
+  --filterBoxInputBG: var(--filterBoxInputBG-dark);
+  --filterBoxInputText: var(--filterBoxInputText-dark);
+}
+.light-theme {
+  background-color: var(--mainBG1);
+  --mainBG1: var(--mainBG1-light);
+  --headerBG: var(--headerBG-light);
+  --toolboxBG: var(--toolboxBG-light);
+  --entryBoxHeaderBG: var(--entryBoxHeaderBG-light);
+  --entryContainerBG: var(--entryContainerBG-light);
+  --mainTextColor: var(--mainTextColor-light);
+  --mainButtonBG: var(--mainButtonBG-light);
+  --mainButtonBorder: var(--mainButtonBorder-light);
+  --highlightText: var(--highlightText-light);
+  --deleteEntryBG: var(--deleteEntryBG-light);
+  --deleteButtonBG: var(--deleteButtonBG-light);
+  --dateRowBG: var(--dateRowBG-light);
+  --dateRowBorder: var(--dateRowBorder-light);
+  --dateRowText: var(--dateRowText-light);
+  --deleteEntryText: var(--deleteEntryText-light);
+  --trBottomBorder: var(--trBottomBorder-light);
+  --updateDetailsBG: var(--updateDetailsBG-light);
+  --inputBG: var(--inputBG-light);
+  --inputTextColor: var(--inputTextColor-light);
+  --inputPlaceholderColor: var(--inputPlaceholderColor-light);
+  --statusBG: var(--statusBG-light);
+  --statusText: var(--statusText-light);
+  --cancelButtonBG: var(--cancelButtonBG-light);
+  --cancelButtonText: var(--cancelButtonText-light);
+  --filterBoxBorder: var(--filterBoxBorder-light);
+  --filterBoxBorderActivated: var(--filterBoxBorderActivated-light);
+  --filterBoxBGActivated: var(--filterBoxBGActivated-light);
+  --filterBoxText: var(--filterBoxText-light);
+  --filterBoxInputBG: var(--filterBoxInputBG-light);
+  --filterBoxInputText: var(--filterBoxInputText-light);
+}
+
+/* :root.theme-2 {
   --mainBG1: #1b1b1b;
   --toolboxBG: #222222;
   --headerBG: #53457a;
@@ -36,8 +165,7 @@
   --filterBoxText: #8a8a8a;
   --filterBoxInputBG: #525151;
   --filterBoxInputText: #a9a9a9;
-}
-
+} */
 html {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 18px;
@@ -54,7 +182,13 @@ header {
   align-content: center;
   align-items: center;
 }
-
+#headerLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
 #headerRight {
   text-align: right;
 }
@@ -65,7 +199,6 @@ h1 {
 }
 
 body {
-  background-color: var(--mainBG1);
   height: 100%;
 }
 #desktopContainer {
@@ -106,6 +239,29 @@ body {
   overflow: auto;
   width: 100%;
 }
+/* v------ OPTIONS MENU ------v */
+#optionsMenu {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  background-color: var(--toolboxBG);
+  border: 1px solid var(--filterBoxBorder);
+  border-bottom: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.optionsItem {
+  line-height: 1.8rem;
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--filterBoxBorder);
+}
+.optionsItem:hover {
+  background-color: var(--mainButtonBorder);
+  color: var(--highlightText);
+  cursor: pointer;
+}
+
+/* ^------ OPTIONS MENU END ------^ */
 
 /* v------ TOOLBAR ------v */
 #toolbar {
@@ -157,9 +313,10 @@ body {
   top: 50px;
 }
 
-.entryHeader {
+.entryHeader,
+.entryHeaderLog {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   background-color: var(--headerBG);
   justify-content: space-between;
   padding: 5px;
@@ -178,6 +335,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   border: 3px solid var(--cancelButtonText);
+  margin-bottom: 10px;
 }
 /* ^------ ENTRY BLOCKS end ------^ */
 
@@ -317,6 +475,9 @@ textarea {
   justify-content: center;
   align-items: center;
 }
+.spaced {
+  margin-right: 10px;
+}
 .re-table {
   border-collapse: collapse;
   margin: 10px auto;
@@ -404,6 +565,7 @@ textarea {
 .unavailable {
   opacity: 30%;
 }
+
 /* ^------ TABLE STYLES end ------^ */
 
 @media (max-width: 850px) {
@@ -438,7 +600,7 @@ textarea {
   }
   .dateFilter {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
@@ -446,15 +608,82 @@ textarea {
     border-radius: 20px;
     background-color: var(--toolboxBG);
     color: var(--filterBoxText);
-    overflow: hidden;
+    height: fit-content;
+    width: 90%;
+    margin: 10px;
+  }
+  .dateBlock {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .filterHeader {
+    background-color: var(--entryContainerBG);
+    color: var(--mainTextColor);
+    width: 100%;
+    padding: 2px 10px;
+  }
+  .filterHeaderActivated {
+    background-color: var(--entryBoxHeaderBG);
+    color: var(--mainTextColor);
+    width: 100%;
+    padding: 2px 10px;
+    font-weight: bold;
   }
   .entryHeader {
     font-size: 1.1rem;
+    flex-direction: row;
+  }
+
+  .entryHeaderLog {
+    font-size: 1.1rem;
+    flex-direction: column;
+  }
+  .entryContainer {
+    padding: 10px;
+    width: 350px;
+    border-radius: 8px;
+    margin: 10px auto;
+    background-color: var(--entryContainerBG);
+    color: var(--mainTextColor);
   }
   .re-table {
     font-size: 0.9rem;
     margin: 5px auto;
     width: 90%;
+  }
+
+  .logRowContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  .logRowUpper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .logRowMiddle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+  .logRowLower {
+    text-align: right;
+  }
+  .logRowTimes {
+    font-size: 0.7rem;
+    filter: opacity(0.7);
+    vertical-align: bottom;
+  }
+  .logRowProjectName {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .logRowClient {
+    filter: opacity(0.7);
   }
   .mainButton,
   submit {

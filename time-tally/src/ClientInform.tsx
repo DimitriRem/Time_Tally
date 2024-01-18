@@ -19,7 +19,7 @@ const ClientInform: React.FC<ClientInformProps> = ({ setIsInformModalOpen }) => 
         </span>
         <br />
         <br />
-        <button className="cancelButton" onClick={cancelDelete}>
+        <button className="toolButton" onClick={cancelDelete}>
           Close
         </button>
       </td>

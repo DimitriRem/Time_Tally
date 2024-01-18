@@ -1,7 +1,5 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 import { api } from "../utils/api";
-
-
 interface LogItem {
     project: string;
     details: string;
@@ -11,25 +9,21 @@ interface LogItem {
     id: string;
     rate: string;
 }
-
 interface Client {
     id: string;
     name: string;
 }
-
 interface Project {
     id: string;
     name: string;
     client: string;
 }
-
 interface Rate {
     id: string;
     rate: string;
     label: string;
 
 }
-
 interface DataContextType {
     addNewClientIsVisible: boolean;
     addNewProjectIsVisible: boolean;
@@ -44,6 +38,7 @@ interface DataContextType {
     projects: Project[];
     rates: Rate[];
     status: string;
+    theme: string;
     addNewClientClose: () => void;
     addNewClientPop: () => void;
     addNewProjectClose: () => void;
@@ -63,6 +58,7 @@ interface DataContextType {
     setProjects: React.Dispatch<React.SetStateAction<Project[]>>;
     setRates: React.Dispatch<React.SetStateAction<Rate[]>>;
     setStatus: React.Dispatch<React.SetStateAction<string>>;
+    setTheme: React.Dispatch<React.SetStateAction<string>>
 }
 
 const DataContext = createContext<DataContextType>({
@@ -79,30 +75,15 @@ const DataContext = createContext<DataContextType>({
     projects: [],
     rates: [],
     status: "",
-    addNewClientClose: () => {
-        throw new Error("Function not implemented.");
-    },
-    addNewClientPop: () => {
-        throw new Error("Function not implemented.");
-    },
-    addNewProjectClose: () => {
-        throw new Error("Function not implemented.");
-    },
-    addNewProjectPop: () => {
-        throw new Error("Function not implemented.");
-    },
-    addNewRateClose: () => {
-        throw new Error("Function not implemented.");
-    },
-    addNewRatePop: () => {
-        throw new Error("Function not implemented.");
-    },
-    api: () => {
-        throw new Error("Function not implemented.");
-    },
-    fetchData: () => {
-        throw new Error("Function not implemented.");
-    },
+    theme: "",
+    addNewClientClose: () => { },
+    addNewClientPop: () => { },
+    addNewProjectClose: () => { },
+    addNewProjectPop: () => { },
+    addNewRateClose: () => { },
+    addNewRatePop: () => { },
+    api: () => { },
+    fetchData: () => { },
     setClients: () => { },
     setAddNewClientIsVisible: () => { },
     setAddNewProjectIsVisible: () => { },
@@ -113,9 +94,9 @@ const DataContext = createContext<DataContextType>({
     setNewLogItem: () => { },
     setProjects: () => { },
     setRates: () => { },
-    setStatus: () => { }
+    setStatus: () => { },
+    setTheme: () => { }
 });
-
 interface DataProviderProps {
     children: ReactNode;
 }
@@ -129,6 +110,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
     const [fetchError, setFetchError] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [status, setStatus] = useState<string>("");
+    const [theme, setTheme] = useState<string>("light-theme");
     const [addNewProjectIsVisible, setAddNewProjectIsVisible] = useState<boolean>(false);
     const [addNewClientIsVisible, setAddNewClientIsVisible] = useState<boolean>(false);
     const [addNewRateIsVisible, setAddNewRateIsVisible] = useState<boolean>(false);
@@ -181,6 +163,8 @@ export const DataProvider = ({ children }: DataProviderProps) => {
         window.innerWidth < 850 ? setIsSmallScreen(true) : setIsSmallScreen(false);
     }, []);
 
+
+
     useEffect(() => {
         let timeoutId: any;
 
@@ -219,7 +203,6 @@ export const DataProvider = ({ children }: DataProviderProps) => {
         setAddNewRateIsVisible(false);
     };
 
-
     return (
         <DataContext.Provider
             value={{
@@ -255,6 +238,8 @@ export const DataProvider = ({ children }: DataProviderProps) => {
                 setRates,
                 setStatus,
                 status,
+                setTheme,
+                theme
             }}
         >
             {children}

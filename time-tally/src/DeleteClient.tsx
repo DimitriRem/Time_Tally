@@ -34,7 +34,7 @@ const DeleteClient: React.FC<DeleteClientProps> = ({ name, id, setIsDeleteModalO
           Yes, delete client!
         </button>
         <br />
-        <button className="cancelButton" onClick={cancelDelete}>
+        <button className="toolButton" onClick={cancelDelete}>
           Cancel
         </button>
       </td>

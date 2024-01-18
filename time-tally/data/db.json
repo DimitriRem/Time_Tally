@@ -24,6 +24,11 @@
       "id": "201f",
       "rate": "15",
       "label": "Rate for Deleting"
+    },
+    {
+      "id": "bc9a",
+      "rate": "10000",
+      "label": "The bi expensive rate"
     }
   ],
   "clients": [
@@ -88,6 +93,11 @@
       "id": "0eae",
       "name": "JayVay sms app",
       "client": "Acmecorp"
+    },
+    {
+      "id": "ec39",
+      "name": "The Project with a longer name",
+      "client": "Haley's Porcelain"
     }
   ],
   "log": [
@@ -173,13 +183,13 @@
       "id": "36"
     },
     {
+      "id": "37",
       "project": "JayVay widget",
-      "details": "Error fixes",
+      "details": "Error fixesa",
       "client": "JayVay",
       "rate": "20",
       "startTime": "2023-11-08T15:30:00.000Z",
-      "endTime": "2023-11-08T17:30:00.000Z",
-      "id": "37"
+      "endTime": "2023-11-08T17:30:00.000Z"
     },
     {
       "project": "Make Inc Website",
@@ -193,7 +203,7 @@
     {
       "id": "39",
       "project": "GC Flyer",
-      "details": "Flyer Design A5",
+      "details": "Flyer Design A5a",
       "client": "Greg Cooper",
       "rate": "15",
       "startTime": "2023-12-19T07:00:00.000Z",
@@ -225,6 +235,24 @@
       "startTime": "2023-12-29T07:00:00.000Z",
       "endTime": "2023-12-29T15:00:00.000Z",
       "id": "42"
+    },
+    {
+      "id": "164f",
+      "project": "The Project with a longer name",
+      "details": "This is a particularly longer description for this project to test layout.",
+      "client": "Haley's Porcelain",
+      "rate": "10000",
+      "startTime": "2024-01-17T07:00:00.000Z",
+      "endTime": "2024-01-17T12:00:00.000Z"
+    },
+    {
+      "id": "6d87",
+      "project": "GC Flyer",
+      "details": "GC Flyer copy updates.",
+      "client": "Greg Cooper",
+      "rate": "15",
+      "startTime": "2024-01-17T13:00:00.000Z",
+      "endTime": "2024-01-17T16:59:00.000Z"
     }
   ]
 }

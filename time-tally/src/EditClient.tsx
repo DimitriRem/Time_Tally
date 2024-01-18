@@ -129,7 +129,7 @@ const EditClient: React.FC<EditClientProps> = ({ name, id, setIsEditModalOpen })
             Update Client
           </button>
         </form>
-        <button className="cancelButton" onClick={cancelEdit}>
+        <button className="toolButton" onClick={cancelEdit}>
           Cancel
         </button>
       </td>

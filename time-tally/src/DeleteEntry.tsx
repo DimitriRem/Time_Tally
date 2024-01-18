@@ -37,7 +37,7 @@ const DeleteEntry: React.FC<DeleteEntryProps> = ({ details, project, id, setIsDe
           Yes, delete it!
         </button>
         <br />
-        <button className="cancelButton" onClick={cancelDelete}>
+        <button className="toolButton" onClick={cancelDelete}>
           Cancel
         </button>
       </td>

@@ -233,7 +233,7 @@ const EditEntry: React.FC<EditEntryProps> = ({
             Update
           </button>
         </form>
-        <button className="cancelButton" onClick={cancelEdit}>
+        <button className="toolButton" onClick={cancelEdit}>
           Cancel
         </button>
       </td>

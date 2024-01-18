@@ -63,7 +63,7 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
 
         <div id="addClientContainer" className="entryContainer">
           <div className="entryHeader">
-            Add a New Client {isSmallScreen ? <button className="cancelButton" onClick={handleClose}>
+            Add a New Client {isSmallScreen ? <button className="toolButton" onClick={handleClose}>
               Cancel
             </button> : ""}
 

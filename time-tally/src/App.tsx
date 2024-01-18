@@ -1,11 +1,14 @@
+import { useContext } from "react";
 import Header from "./Header";
 import Toolbox from "./Toolbox";
 import TableContainer from "./TableContainer";
-import { DataProvider } from "./context/DataContext";
+import DataContext from "./context/DataContext";
 
 function App() {
+  const { theme } = useContext(DataContext);
+
   return (
-    <DataProvider>
+    <div className={theme}>
       <Header />
       <div id="desktopContainer">
         <div id="toolbox">
@@ -14,8 +17,7 @@ function App() {
         <div id="tableContainer">
           <TableContainer />
         </div>
-      </div>
-    </DataProvider>
+      </div></div>
   );
 }
 

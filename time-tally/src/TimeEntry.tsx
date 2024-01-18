@@ -143,7 +143,7 @@ const TimeEntry = () => {
         <div id="timeEntryContainer" className="entryContainer">
           Log time for
           <form className="logForm" onSubmit={handleFormSubmit}>
-            <div id="timeEntryHeader" className="entryHeader">
+            <div id="timeEntryHeader" className="entryHeaderLog">
               <div className="entryHeaderLeft">
                 <div id="projectName" className="projectName">
                   {projects[currentProjectIndex].name}

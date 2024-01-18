@@ -71,7 +71,7 @@ const AddNewRate: React.FC<AddNewRateProps> = () => {
         :
         <div id="addRateContainer" className="entryContainer">
           <div className="entryHeader">
-            Add a New Rate {isSmallScreen ? <button className="cancelButton" onClick={handleClose}>
+            Add a New Rate {isSmallScreen ? <button className="toolButton" onClick={handleClose}>
               Cancel
             </button> : ""}
           </div>

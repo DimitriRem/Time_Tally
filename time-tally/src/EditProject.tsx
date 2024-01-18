@@ -132,7 +132,7 @@ const EditProject: React.FC<EditProjectProps> = ({ name, id, client, setIsEditMo
             Update Project
           </button>
         </form>
-        <button className="cancelButton" onClick={cancelEdit}>
+        <button className="toolButton" onClick={cancelEdit}>
           Cancel
         </button>
       </td>

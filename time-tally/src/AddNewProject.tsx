@@ -89,7 +89,7 @@ const AddNewProject: React.FC<AddNewProjectProps> = () => {
         :
         <div id="addProjectContainer" className="entryContainer">
           <div className="entryHeader">
-            Add a New Project{isSmallScreen ? <button className="cancelButton" onClick={handleClose}>
+            Add a New Project{isSmallScreen ? <button className="toolButton" onClick={handleClose}>
               Cancel
             </button> : ""}
           </div>

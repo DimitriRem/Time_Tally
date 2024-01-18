@@ -35,7 +35,7 @@ const DeleteProject: React.FC<DeleteProjectProps> = ({ name, id, setIsDeleteModa
           Yes, delete it!
         </button>
         <br />
-        <button className="cancelButton" onClick={cancelDelete}>
+        <button className="toolButton" onClick={cancelDelete}>
           Cancel
         </button>
       </td>
