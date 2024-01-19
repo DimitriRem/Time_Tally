@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import DeleteEntry from "./DeleteEntry";
 import EditEntry from "./EditEntry";
+import DataContext from "./context/DataContext";
 
 interface LogTableRowProps {
   id: string;
@@ -28,6 +29,7 @@ const LogTableRow: React.FC<LogTableRowProps> = ({
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [startTimeString, setStartTimeString] = useState<string | null>(null);
   const [endTimeString, setEndTimeString] = useState<string | null>(null);
+  const { currency } = useContext(DataContext);
 
   useEffect(() => {
     setStartDate(new Date(startTime));
@@ -72,11 +74,11 @@ const LogTableRow: React.FC<LogTableRowProps> = ({
         <td>{project}</td>
         <td>{details}</td>
         <td>{client}</td>
-        <td>${rate}/hr</td>
+        <td>{currency}{rate}/hr</td>
         <td>{startTimeString}</td>
         <td>{endTimeString}</td>
         <td>{numberOfHours && `${numberOfHours.toFixed(1)}hrs`}</td>
-        <td>${numberOfHours && (numberOfHours * Number(rate)).toFixed(2)}</td>
+        <td>{currency}{numberOfHours && (numberOfHours * Number(rate)).toFixed(2)}</td>
         <td className="rightTD">
           <span
             className="material-symbols-outlined rowButton"

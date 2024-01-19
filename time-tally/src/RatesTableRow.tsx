@@ -15,7 +15,7 @@ interface RatesTableRowProps {
 }
 
 const RatesTableRow: React.FC<RatesTableRowProps> = ({ id, rate, label }) => {
-  const { logItems } = useContext(DataContext);
+  const { logItems, currency } = useContext(DataContext);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [isInformModalOpen, setIsInformModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
@@ -35,7 +35,7 @@ const RatesTableRow: React.FC<RatesTableRowProps> = ({ id, rate, label }) => {
     <React.Fragment>
       <tr>
         <td>{label}</td>
-        <td>${rate}/hr</td>
+        <td>{currency}{rate}/hr</td>
         <td className="rightTD">
           <span
             className="material-symbols-outlined rowButton"

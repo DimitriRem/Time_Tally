@@ -8,7 +8,7 @@ interface EditRateProps {
   setIsEditModalOpen: (isOpen: boolean) => void;
 }
 const EditRate: React.FC<EditRateProps> = ({ label, id, rate, setIsEditModalOpen }) => {
-  const { api, setStatus, fetchData, logItems } =
+  const { api, setStatus, fetchData, logItems, currency } =
     useContext(DataContext);
 
   const [updatedRateLabel, setUpdatedRateLabel] = useState(label);
@@ -94,7 +94,7 @@ const EditRate: React.FC<EditRateProps> = ({ label, id, rate, setIsEditModalOpen
           />
           <br />
           <label htmlFor="rateAmount">Rate Amount: </label>
-          $<input
+          {currency}<input
             type="number"
             id="rateAmount"
             name="rateAmount"

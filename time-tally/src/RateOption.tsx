@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import DataContext from "./context/DataContext";
 
 interface RateOptionProps {
   rate: string;
@@ -7,9 +8,10 @@ interface RateOptionProps {
 }
 
 const RateOption: React.FC<RateOptionProps> = ({ rate, id, label }) => {
+  const { currency } = useContext(DataContext);
   return (
     <option value={id}>
-      ${rate}/hr {label}
+      {currency}{rate}/hr {label}
     </option>
   );
 };

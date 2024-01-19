@@ -5,66 +5,72 @@
 }
 
 :root {
-  --mainBG1-light: #ededed;
-  --mainBG1-dark: #1b1b1b;
-  --toolboxBG-light: #c1cedd;
-  --toolboxBG-dark: #222222;
-  --headerBG-light: #316cb0;
-  --headerBG-dark: #53457a;
-  --entryBoxHeaderBG-light: #316cb0;
-  --entryBoxHeaderBG-dark: #53457a;
-  --entryContainerBG-light: #c1cedd;
-  --entryContainerBG-dark: #363636;
-  --mainTextColor-light: #181818;
-  --mainTextColor-dark: #c0c0c0;
-  --mainButtonBG-light: #2d9640;
-  --mainButtonBG-dark: #3868ab;
-  --mainButtonBorder-light: #266932;
-  --mainButtonBorder-dark: #3680e7;
-  --highlightText-light: #f4f4f4;
-  --highlightText-dark: #eeeeee;
-  --deleteEntryBG-light: #bf6363;
-  --deleteEntryBG-dark: #7c3d3d;
-  --deleteButtonBG-light: #d51818;
-  --deleteButtonBG-dark: #d51818;
-  --dateRowBG-light: #a2bad4;
-  --dateRowBG-dark: #3a3645;
-  --dateRowBorder-light: #316cb0;
-  --dateRowBorder-dark: #316cb0;
-  --dateRowText-light: #316cb0;
-  --dateRowText-dark: #c7c7c7;
-  --deleteEntryText-light: #fff;
-  --deleteEntryText-dark: #fff;
-  --trBottomBorder-light: #b9b9b9;
-  --trBottomBorder-dark: #3a3645;
-  --updateDetailsBG-light: #c1cedd;
-  --updateDetailsBG-dark: #363636;
-  --inputBG-light: #e4ecf5;
-  --inputBG-dark: #656565;
-  --inputTextColor-light: #181818;
-  --inputTextColor-dark: #fff;
-  --inputPlaceholderColor-light: #a6a5a5;
-  --inputPlaceholderColor-dark: #c2c2c2;
-  --statusBG-light: #eee;
-  --statusBG-dark: #eee;
-  --statusText-light: #316cb0;
-  --statusText-dark: #316cb0;
   --cancelButtonBG-light: #eee;
   --cancelButtonBG-dark: #eee;
   --cancelButtonText-light: #4f4f4f;
   --cancelButtonText-dark: #4f4f4f;
+  --columnTitleText-light: #f4f4f4;
+  --columnTitleText-dark: #c0c0c0;
+  --dateRowBG-light: #a2bad4;
+  --dateRowBG-dark: #3a3645;
+  --dateRowBorder-light: #316cb0;
+  --dateRowBorder-dark: #7962b9;
+  --dateRowText-light: #316cb0;
+  --dateRowText-dark: #c7c7c7;
+  --deleteButtonBG-light: #d51818;
+  --deleteButtonBG-dark: #d51818;
+  --deleteEntryBG-light: #bf6363;
+  --deleteEntryBG-dark: #7c3d3d;
+  --deleteEntryText-light: #fff;
+  --deleteEntryText-dark: #fff;
+  --entryBoxHeaderBG-light: #316cb0;
+  --entryBoxHeaderBG-dark: #53457a;
+  --entryContainerBG-light: #a5c0df;
+  --entryContainerBG-dark: #363636;
+  --filterBoxBGActivated-light: #c1cedd;
+  --filterBoxBGActivated-dark: #332f40;
   --filterBoxBorder-light: #8a8a8a;
   --filterBoxBorder-dark: #8a8a8a;
   --filterBoxBorderActivated-light: #316cb0;
   --filterBoxBorderActivated-dark: #316cb0;
-  --filterBoxBGActivated-light: #c1cedd;
-  --filterBoxBGActivated-dark: #332f40;
-  --filterBoxText-light: #393939;
-  --filterBoxText-dark: #8a8a8a;
   --filterBoxInputBG-light: #e4ecf5;
   --filterBoxInputBG-dark: #525151;
   --filterBoxInputText-light: #181818;
   --filterBoxInputText-dark: #a9a9a9;
+  --filterBoxText-light: #393939;
+  --filterBoxText-dark: #8a8a8a;
+  --headerBG-light: #316cb0;
+  --headerBG-dark: #53457a;
+  --headerText-light: #f4f4f4;
+  --headerText-dark: #c0c0c0;
+  --highlightText-light: #f4f4f4;
+  --highlightText-dark: #eeeeee;
+  --inputBG-light: #e4ecf5;
+  --inputBG-dark: #656565;
+  --inputPlaceholderColor-light: #a6a5a5;
+  --inputPlaceholderColor-dark: #c2c2c2;
+  --inputTextColor-light: #181818;
+  --inputTextColor-dark: #fff;
+  --mainBG1-light: #ededed;
+  --mainBG1-dark: #1b1b1b;
+  --mainButtonBG-light: #2d9640;
+  --mainButtonBG-dark: #3868ab;
+  --mainButtonBorder-light: #266932;
+  --mainButtonBorder-dark: #3680e7;
+  --mainTextColor-light: #0a0a0a;
+  --mainTextColor-dark: #c0c0c0;
+  --statusBG-light: #eee;
+  --statusBG-dark: #eee;
+  --statusText-light: #316cb0;
+  --statusText-dark: #316cb0;
+  --toolButtonText-light: #0a0a0a;
+  --toolButtonText-dark: #c0c0c0;
+  --toolboxBG-light: #c1cedd;
+  --toolboxBG-dark: #222222;
+  --trBottomBorder-light: #b9b9b9;
+  --trBottomBorder-dark: #3a3645;
+  --updateDetailsBG-light: #c1cedd;
+  --updateDetailsBG-dark: #363636;
 }
 .dark-theme {
   background-color: var(--mainBG1);
@@ -98,6 +104,9 @@
   --filterBoxText: var(--filterBoxText-dark);
   --filterBoxInputBG: var(--filterBoxInputBG-dark);
   --filterBoxInputText: var(--filterBoxInputText-dark);
+  --headerText: var(--headerText-dark);
+  --toolButtonText: var(--toolButtonText-dark);
+  --columnTitleText: var(--columnTitleText-dark);
 }
 .light-theme {
   background-color: var(--mainBG1);
@@ -131,41 +140,11 @@
   --filterBoxText: var(--filterBoxText-light);
   --filterBoxInputBG: var(--filterBoxInputBG-light);
   --filterBoxInputText: var(--filterBoxInputText-light);
+  --headerText: var(--headerText-light);
+  --toolButtonText: var(--toolButtonText-light);
+  --columnTitleText: var(--columnTitleText-light);
 }
 
-/* :root.theme-2 {
-  --mainBG1: #1b1b1b;
-  --toolboxBG: #222222;
-  --headerBG: #53457a;
-  --entryBoxHeaderBG: #53457a;
-  --entryContainerBG: #363636;
-  --mainTextColor: #c0c0c0;
-  --mainButtonBG: #3868ab;
-  --mainButtonBorder: #3680e7;
-  --highlightText: #eeeeee;
-  --deleteEntryBG: #7c3d3d;
-  --deleteButtonBG: #d51818;
-  --dateRowBG: #3a3645;
-  --dateRowBorder: #53457a;
-  --dateRowText: #c7c7c7;
-  --utilityItemBG: #53457a;
-  --deleteEntryText: #fff;
-  --trBottomBorder: #3a3645;
-  --updateDetailsBG: #363636;
-  --inputBG: #656565;
-  --inputTextColor: #fff;
-  --inputPlaceholderColor: #c2c2c2;
-  --statusBG: #eee;
-  --statusText: #53457a;
-  --cancelButtonBG: #eee;
-  --cancelButtonText: #4f4f4f;
-  --filterBoxBorder: #8a8a8a;
-  --filterBoxBorderActivated: #53457a;
-  --filterBoxBGActivated: #332f40;
-  --filterBoxText: #8a8a8a;
-  --filterBoxInputBG: #525151;
-  --filterBoxInputText: #a9a9a9;
-} */
 html {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 18px;
@@ -188,9 +167,11 @@ header {
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  color: var(--headerText);
 }
 #headerRight {
   text-align: right;
+  color: var(--headerText);
 }
 
 h1 {
@@ -249,6 +230,7 @@ body {
   border-bottom: 0;
   border-radius: 8px;
   overflow: hidden;
+  z-index: 100;
 }
 .optionsItem {
   line-height: 1.8rem;
@@ -259,6 +241,15 @@ body {
   background-color: var(--mainButtonBorder);
   color: var(--highlightText);
   cursor: pointer;
+}
+#currencyInput {
+  width: 30px;
+}
+.optionsFooter {
+  line-height: 1.8rem;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* ^------ OPTIONS MENU END ------^ */
@@ -277,7 +268,7 @@ body {
 .toolButton {
   padding: 10px;
   background-color: var(--entryContainerBG);
-  color: var(--mainTextColor);
+  color: var(--toolButtonText);
   border: 1px solid var(--filterBoxText);
   border-radius: 10px;
   cursor: pointer;
@@ -289,7 +280,7 @@ body {
 }
 .toolButtonCurrent {
   padding: 10px;
-  color: var(--mainTextColor);
+  color: var(--highlightText);
   background-color: var(--entryBoxHeaderBG);
   border: 0;
   border-radius: 10px;
@@ -384,6 +375,7 @@ submit {
   padding: 10px;
   width: fit-content;
   border: 3px solid var(--mainButtonBorder);
+  z-index: 100;
 }
 
 .deleteButton {
@@ -468,7 +460,7 @@ textarea {
 }
 .filterHeaderActivated {
   background-color: var(--entryBoxHeaderBG);
-  color: var(--mainTextColor);
+  color: var(--highlightText);
   height: 100%;
   padding: 0 10px;
   display: flex;
@@ -485,7 +477,7 @@ textarea {
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   color: var(--mainTextColor);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .re-table tr {
@@ -499,7 +491,10 @@ textarea {
   font-weight: bold;
 }
 
-.re-table th,
+.re-table th {
+  padding: 0.3rem;
+  color: var(--columnTitleText);
+}
 .re-table td {
   padding: 0.3rem;
 }
@@ -508,7 +503,7 @@ textarea {
 }
 
 .re-dateRow {
-  border-top: 2px solid var(--dateRowBorder);
+  border-bottom: 1px solid var(--dateRowBorder);
   color: var(--dateRowText);
   font-size: 0.6rem;
   font-weight: bold;
@@ -568,6 +563,50 @@ textarea {
 
 /* ^------ TABLE STYLES end ------^ */
 
+#helpContainer {
+  position: absolute;
+  z-index: 99;
+  width: 80%;
+  height: 90vh;
+  top: 50px;
+  background-color: var(--mainBG1);
+  padding: 30px;
+  border: 2px solid var(--dateRowBorder);
+  border-radius: 10px;
+}
+
+#helpContentBox {
+  height: 90%;
+  overflow: auto;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#helpContentBox h3 {
+  margin-top: 10px;
+}
+#helpContentBox ol {
+  margin-left: 30px;
+}
+#helpContentBox ul {
+  margin-left: 30px;
+}
+#helpContentBox p {
+  margin-left: 10px;
+}
+
+#helpHeader {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: var(--headerBG);
+  color: var(--highlightText);
+  border-radius: 5px;
+  padding: 2px 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media (max-width: 850px) {
   #desktopContainer {
     flex-direction: column;
@@ -598,6 +637,9 @@ textarea {
     flex-direction: column;
     font-size: 0.8rem;
   }
+  #helpContentBox {
+    font-size: 0.9rem;
+  }
   .dateFilter {
     display: flex;
     flex-direction: column;
@@ -625,7 +667,7 @@ textarea {
   }
   .filterHeaderActivated {
     background-color: var(--entryBoxHeaderBG);
-    color: var(--mainTextColor);
+    color: var(--highlightText);
     width: 100%;
     padding: 2px 10px;
     font-weight: bold;

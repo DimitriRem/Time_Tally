@@ -2,11 +2,12 @@ import { useContext, useMemo, useState } from "react";
 import DataContext from "./context/DataContext";
 import Logo from "./Logo";
 import OptionsMenu from "./OptionsMenu";
+import Help from "./Help";
 
 const Header = () => {
   const dataContext = useContext(DataContext);
-  const { status, setStatus } = useMemo(() => dataContext, [dataContext]);
-  const [isOptionsOpen, setIsOptionsOpen] = useState(true);
+  const { status } = useMemo(() => dataContext, [dataContext]);
+  const { theme, isOptionsOpen, setIsOptionsOpen, isHelpOpen, setIsHelpOpen } = useContext(DataContext);
   const openOptions = () => {
     setIsOptionsOpen((prevState) => !prevState);
   };
@@ -14,7 +15,7 @@ const Header = () => {
     <header>
       <div id="headerLeft">
         <Logo
-          strokeColor={"#c0c0c0"}
+          strokeColor={theme === "light-theme" ? "#f4f4f4" : "#c0c0c0"}
           logoWidth={40}
           logoHeight={25}
 
@@ -24,6 +25,7 @@ const Header = () => {
       <div id="headerRight"><span
         className="material-symbols-outlined rowButton" onClick={openOptions}>more_vert</span></div>
       {isOptionsOpen && <OptionsMenu />}
+      {isHelpOpen && <Help />}
     </header>
   );
 };

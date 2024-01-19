@@ -1,28 +1,27 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
 import { api } from "../utils/api";
 interface LogItem {
-    project: string;
-    details: string;
     client: string;
-    startTime: string;
+    details: string;
     endTime: string;
     id: string;
+    project: string;
     rate: string;
+    startTime: string;
 }
 interface Client {
     id: string;
     name: string;
 }
 interface Project {
+    client: string;
     id: string;
     name: string;
-    client: string;
 }
 interface Rate {
     id: string;
-    rate: string;
     label: string;
-
+    rate: string;
 }
 interface DataContextType {
     addNewClientIsVisible: boolean;
@@ -32,6 +31,8 @@ interface DataContextType {
     currentNav: string;
     fetchError: string;
     isLoading: boolean;
+    isHelpOpen: boolean;
+    isOptionsOpen: boolean;
     isSmallScreen: boolean;
     logItems: LogItem[];
     newLogItem: object;
@@ -39,6 +40,7 @@ interface DataContextType {
     rates: Rate[];
     status: string;
     theme: string;
+    currency: string;
     addNewClientClose: () => void;
     addNewClientPop: () => void;
     addNewProjectClose: () => void;
@@ -59,6 +61,9 @@ interface DataContextType {
     setRates: React.Dispatch<React.SetStateAction<Rate[]>>;
     setStatus: React.Dispatch<React.SetStateAction<string>>;
     setTheme: React.Dispatch<React.SetStateAction<string>>
+    setCurrency: React.Dispatch<React.SetStateAction<string>>
+    setIsOptionsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsHelpOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const DataContext = createContext<DataContextType>({
@@ -69,6 +74,8 @@ const DataContext = createContext<DataContextType>({
     currentNav: "",
     fetchError: "",
     isLoading: false,
+    isOptionsOpen: false,
+    isHelpOpen: false,
     isSmallScreen: false,
     logItems: [],
     newLogItem: {},
@@ -76,6 +83,7 @@ const DataContext = createContext<DataContextType>({
     rates: [],
     status: "",
     theme: "",
+    currency: "",
     addNewClientClose: () => { },
     addNewClientPop: () => { },
     addNewProjectClose: () => { },
@@ -95,7 +103,11 @@ const DataContext = createContext<DataContextType>({
     setProjects: () => { },
     setRates: () => { },
     setStatus: () => { },
-    setTheme: () => { }
+    setTheme: () => { },
+    setCurrency: () => { },
+    setIsOptionsOpen: () => { },
+    setIsHelpOpen: () => { }
+
 });
 interface DataProviderProps {
     children: ReactNode;
@@ -116,6 +128,9 @@ export const DataProvider = ({ children }: DataProviderProps) => {
     const [addNewRateIsVisible, setAddNewRateIsVisible] = useState<boolean>(false);
     const [currentNav, setCurrentNav] = useState<string>("log");
     const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
+    const [currency, setCurrency] = useState<string>("$");
+    const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false);
+    const [isHelpOpen, setIsHelpOpen] = useState<boolean>(false);
 
     const fetchData = async () => {
         try {
@@ -217,10 +232,13 @@ export const DataProvider = ({ children }: DataProviderProps) => {
                 addNewRatePop,
                 api,
                 clients,
+                currency,
                 currentNav,
                 logItems,
                 isLoading,
                 isSmallScreen,
+                isOptionsOpen,
+                isHelpOpen,
                 fetchData,
                 fetchError,
                 newLogItem,
@@ -230,8 +248,11 @@ export const DataProvider = ({ children }: DataProviderProps) => {
                 setAddNewProjectIsVisible,
                 setAddNewRateIsVisible,
                 setClients,
+                setCurrency,
                 setCurrentNav,
                 setFetchError,
+                setIsOptionsOpen,
+                setIsHelpOpen,
                 setLogItems,
                 setNewLogItem,
                 setProjects,

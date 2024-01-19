@@ -7,6 +7,7 @@ const AddNewRate: React.FC<AddNewRateProps> = () => {
   const {
     addNewRateClose,
     currentNav,
+    currency,
     setRates,
     rates,
     isSmallScreen,
@@ -86,7 +87,7 @@ const AddNewRate: React.FC<AddNewRateProps> = () => {
               required
             ></input>
             <br />
-            <label htmlFor="addRateNumberBox">Rate: $</label>
+            <label htmlFor="addRateNumberBox">Rate: {currency}</label>
             <input
               type="number"
               id="addRateNumberBox"
