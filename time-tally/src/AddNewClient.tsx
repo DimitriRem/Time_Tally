@@ -13,7 +13,6 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
     name: "",
   });
   const {
-    currentNav,
     setStatus,
     setAddNewClientIsVisible,
     isSmallScreen,
