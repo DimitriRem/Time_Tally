@@ -4,6 +4,8 @@
   padding: 0;
 }
 
+/* COLOUR Palettes begin ==========v */
+
 :root {
   --cancelButtonBG-light: #eee;
   --cancelButtonBG-dark: #eee;
@@ -73,6 +75,7 @@
   --updateDetailsBG-dark: #363636;
 }
 .dark-theme {
+  min-height: 100vh;
   background-color: var(--mainBG1);
   --mainBG1: var(--mainBG1-dark);
   --headerBG: var(--headerBG-dark);
@@ -109,6 +112,7 @@
   --columnTitleText: var(--columnTitleText-dark);
 }
 .light-theme {
+  min-height: 100vh;
   background-color: var(--mainBG1);
   --mainBG1: var(--mainBG1-light);
   --headerBG: var(--headerBG-light);
@@ -145,6 +149,8 @@
   --columnTitleText: var(--columnTitleText-light);
 }
 
+/* COLOUR Palettes end ==========^ */
+
 html {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 18px;
@@ -179,9 +185,6 @@ h1 {
   line-height: 1.5rem;
 }
 
-body {
-  height: 100%;
-}
 #desktopContainer {
   width: 100%;
   display: flex;
@@ -196,7 +199,7 @@ body {
 
 .status {
   position: absolute;
-  left: 100px;
+  left: 150px;
   top: 5px;
   border: 1px solid var(--mainTextColor);
   height: 40px;
@@ -216,7 +219,6 @@ body {
 }
 
 #tableContainer {
-  height: 90vh;
   overflow: auto;
   width: 100%;
 }
@@ -363,7 +365,7 @@ submit {
 }
 
 .smallScreenAddButton {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   margin: 10px;

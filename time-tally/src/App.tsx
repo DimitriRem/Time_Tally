@@ -17,7 +17,8 @@ function App() {
         <div id="tableContainer">
           <TableContainer />
         </div>
-      </div></div>
+      </div>
+    </div>
   );
 }
 

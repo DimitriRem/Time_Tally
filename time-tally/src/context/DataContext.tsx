@@ -122,7 +122,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
     const [fetchError, setFetchError] = useState<string>("");
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [status, setStatus] = useState<string>("");
-    const [theme, setTheme] = useState<string>("light-theme");
+    const [theme, setTheme] = useState<string>("dark-theme");
     const [addNewProjectIsVisible, setAddNewProjectIsVisible] = useState<boolean>(false);
     const [addNewClientIsVisible, setAddNewClientIsVisible] = useState<boolean>(false);
     const [addNewRateIsVisible, setAddNewRateIsVisible] = useState<boolean>(false);
