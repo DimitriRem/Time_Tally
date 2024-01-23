@@ -1,4 +1,4 @@
-import { useContext, useMemo, useState } from "react";
+import { useContext, useMemo } from "react";
 import DataContext from "./context/DataContext";
 import Logo from "./Logo";
 import OptionsMenu from "./OptionsMenu";
@@ -7,7 +7,7 @@ import Help from "./Help";
 const Header = () => {
   const dataContext = useContext(DataContext);
   const { status } = useMemo(() => dataContext, [dataContext]);
-  const { theme, isOptionsOpen, setIsOptionsOpen, isHelpOpen, setIsHelpOpen } = useContext(DataContext);
+  const { theme, isOptionsOpen, setIsOptionsOpen, isHelpOpen } = useContext(DataContext);
   const openOptions = () => {
     setIsOptionsOpen((prevState) => !prevState);
   };

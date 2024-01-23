@@ -69,7 +69,7 @@ const EditRate: React.FC<EditRateProps> = ({ label, id, rate, setIsEditModalOpen
   }
 
   const updateRate = async () => {
-    const result = api(`/rates/${id}`, "PUT", {
+    api(`/rates/${id}`, "PUT", {
       label: updatedRateLabel,
       rate: updatedRateAmount,
     });

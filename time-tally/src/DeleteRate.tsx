@@ -8,7 +8,7 @@ interface DeleteRateProps {
   setIsDeleteModalOpen: (isOpen: boolean) => void;
 }
 
-const DeleteRate: React.FC<DeleteRateProps> = ({ label, id, rate, setIsDeleteModalOpen }) => {
+const DeleteRate: React.FC<DeleteRateProps> = ({ label, id, setIsDeleteModalOpen }) => {
   const { api, setStatus, fetchData } = useContext(DataContext);
 
   const confirmDelete = () => {
@@ -21,7 +21,7 @@ const DeleteRate: React.FC<DeleteRateProps> = ({ label, id, rate, setIsDeleteMod
   };
 
   const deleteRate = async (id: string) => {
-    const result = api(`/rates/${id}`, "DELETE", "");
+    api(`/rates/${id}`, "DELETE", "");
     setStatus("Rate deleted");
   };
 

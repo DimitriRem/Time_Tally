@@ -135,7 +135,7 @@ const EditEntry: React.FC<EditEntryProps> = ({
   };
 
   const updateEntry = async (updatedlogItem: {}) => {
-    const result = api(`/log/${id}`, "PUT", updatedlogItem);
+    api(`/log/${id}`, "PUT", updatedlogItem);
     setStatus("Entry updated");
   };
 

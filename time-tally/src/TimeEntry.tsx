@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, ChangeEvent } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import ProjectOption from "./ProjectOption";
 import RateOption from "./RateOption";
 import DataContext from "./context/DataContext";
@@ -126,7 +126,7 @@ const TimeEntry = () => {
     if (!newLogItem) {
       return;
     }
-    const result: any = await api("/log", "POST", newLogItem);
+    api("/log", "POST", newLogItem);
     setStatus("Hours submitted");
     fetchData();
     setNewLogItem([]);

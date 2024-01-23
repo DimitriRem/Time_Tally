@@ -21,7 +21,7 @@ const DeleteProject: React.FC<DeleteProjectProps> = ({ name, id, setIsDeleteModa
   };
 
   const deleteProject = async (id: string) => {
-    const result = api(`/projects/${id}`, "DELETE", "");
+    api(`/projects/${id}`, "DELETE", "");
 
     setStatus("Project deleted");
   };

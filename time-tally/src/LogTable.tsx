@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useState, ChangeEvent } from "react";
+import React, { useMemo, useContext, useState } from "react";
 import LogTableRow from "./LogTableRow";
 import LogTableRowSmallScreen from "./LogTableRowSmallScreen";
 import DataContext from "./context/DataContext";
@@ -8,7 +8,7 @@ const LogTable = () => {
   const { logItems, isLoading, fetchError, isSmallScreen } = useContext(DataContext);
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [filterActive, setFilterActive] = useState(false);
+
 
   const filteredLogs = useMemo(() => {
     if (startDate && endDate) {
@@ -33,7 +33,6 @@ const LogTable = () => {
 
   const handleEndDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEndDate(e.target.value);
-    setFilterActive(true);
   };
 
   const startInput = document.getElementById("startDate") as HTMLInputElement;
@@ -44,7 +43,6 @@ const LogTable = () => {
     endInput.value = "";
     setStartDate("");
     setEndDate("");
-    setFilterActive(false);
   };
 
   const renderTable = () => {

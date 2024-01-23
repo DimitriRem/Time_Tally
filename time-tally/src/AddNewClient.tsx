@@ -33,8 +33,6 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
     setSmallScreenOverride(false);
   }
 
-  const hideCancel = currentNav === "clients";
-
   const handleAddClient = (e: React.FormEvent) => {
     e.preventDefault();
     addClient();
@@ -43,7 +41,7 @@ const AddNewClient: React.FC<AddNewClientProps> = () => {
   const addClient = async () => {
     setNewClientDetails({ name: addClientName });
     setAddNewClientIsVisible(false);
-    const result = api("/clients", "POST", newClientDetails);
+    api("/clients", "POST", newClientDetails);
 
     setStatus("New client added.");
     fetchData();

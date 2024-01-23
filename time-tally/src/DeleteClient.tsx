@@ -21,7 +21,7 @@ const DeleteClient: React.FC<DeleteClientProps> = ({ name, id, setIsDeleteModalO
   };
 
   const deleteClient = async (id: string) => {
-    const result = api(`/clients/${id}`, "DELETE", "");
+    api(`/clients/${id}`, "DELETE", "");
     setStatus("Client deleted");
   };
 

@@ -102,7 +102,7 @@ const EditClient: React.FC<EditClientProps> = ({ name, id, setIsEditModalOpen })
   }
 
   const updateClient = async (updatedClientName: string) => {
-    const result = api(`/clients/${id}`, "PUT", {
+    api(`/clients/${id}`, "PUT", {
       name: updatedClientName,
     });
     setStatus("Client updated");

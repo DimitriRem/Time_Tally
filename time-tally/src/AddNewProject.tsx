@@ -75,7 +75,7 @@ const AddNewProject: React.FC<AddNewProjectProps> = () => {
     const listProjects: Array<any> = [...projects, newProjectDetails];
     setProjects(listProjects);
     setAddNewProjectIsVisible(false);
-    const result = api("/projects", "POST", newProjectDetails);
+    api("/projects", "POST", newProjectDetails);
     setStatus("new project added.");
     fetchData();
   };

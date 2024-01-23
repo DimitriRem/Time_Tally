@@ -93,7 +93,7 @@ const EditProject: React.FC<EditProjectProps> = ({ name, id, client, setIsEditMo
   }
 
   const updateProject = async (updatedProjectItem: {}) => {
-    const result = api(`/projects/${id}`, "PUT", updatedProjectItem);
+    api(`/projects/${id}`, "PUT", updatedProjectItem);
     setStatus("Project updated");
   };
 

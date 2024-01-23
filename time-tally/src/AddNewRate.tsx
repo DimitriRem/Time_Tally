@@ -58,7 +58,7 @@ const AddNewRate: React.FC<AddNewRateProps> = () => {
     const listRates: Array<any> = [...rates, newRateDetails];
     setRates(listRates);
     setAddNewRateIsVisible(false);
-    const result = api("/rates", "POST", newRateDetails);
+    api("/rates", "POST", newRateDetails);
     setStatus("New rate added.");
     fetchData();
   };

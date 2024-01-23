@@ -21,7 +21,7 @@ const DeleteEntry: React.FC<DeleteEntryProps> = ({ details, project, id, setIsDe
   };
 
   const deleteEntry = async (id: string) => {
-    const result = api(`/log/${id}`, "DELETE", "");
+    api(`/log/${id}`, "DELETE", "");
     setStatus("Entry deleted");
   };
 
