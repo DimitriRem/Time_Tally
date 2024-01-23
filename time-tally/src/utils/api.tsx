@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:3500";
+export const API_URL = "https://tt-json-server.vercel.app";
 
 export const api = (url: string, method = "GET", body: {}) => {
   const options = {
